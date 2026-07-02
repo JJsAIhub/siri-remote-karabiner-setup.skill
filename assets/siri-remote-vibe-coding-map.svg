@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1700" viewBox="0 0 1200 1700" role="img" aria-labelledby="title desc">
+  <title id="title">Apple TV Siri Remote macOS vibe coding mapping</title>
+  <desc id="desc">Mapping diagram for using Apple TV Siri Remote to control macOS with Karabiner and SiriRemoteHIDProbe.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="0.55" stop-color="#10243f"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="remote" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="20" flood-color="#020617" flood-opacity="0.55"/>
+    </filter>
+    <style>
+      .title { font: 800 48px "Avenir Next", "PingFang SC", sans-serif; fill: #f8fafc; }
+      .subtitle { font: 500 22px "Avenir Next", "PingFang SC", sans-serif; fill: #b6c6dd; }
+      .section { font: 800 24px "Avenir Next", "PingFang SC", sans-serif; fill: #e5edf8; }
+      .label { font: 700 20px "Avenir Next", "PingFang SC", sans-serif; fill: #f8fafc; }
+      .small { font: 500 17px "Avenir Next", "PingFang SC", sans-serif; fill: #cbd5e1; }
+      .tiny { font: 500 14px "Avenir Next", "PingFang SC", sans-serif; fill: #8aa3bf; }
+      .remoteText { font: 700 18px "Avenir Next", "PingFang SC", sans-serif; fill: #0f172a; }
+      .remoteSmall { font: 600 14px "Avenir Next", "PingFang SC", sans-serif; fill: #334155; }
+      .card { fill: rgba(15, 23, 42, 0.78); stroke: #385675; stroke-width: 1.5; }
+      .accent { fill: #38bdf8; }
+      .green { fill: #34d399; }
+      .amber { fill: #fbbf24; }
+      .pink { fill: #fb7185; }
+      .line { stroke: #7dd3fc; stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0.85; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="1700" fill="url(#bg)"/>
+  <circle cx="1020" cy="110" r="190" fill="#38bdf8" opacity="0.08"/>
+  <circle cx="120" cy="1500" r="260" fill="#34d399" opacity="0.08"/>
+
+  <text x="80" y="95" class="title">Apple TV Remote → macOS</text>
+  <text x="80" y="132" class="subtitle">Vibe coding controller: Karabiner handles buttons, SiriRemoteHIDProbe handles touch mouse movement.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="420" y="185" width="360" height="1280" rx="76" fill="url(#remote)" stroke="#f8fafc" stroke-width="3"/>
+    <rect x="462" y="238" width="276" height="276" rx="72" fill="#e2e8f0" stroke="#94a3b8" stroke-width="3"/>
+    <circle cx="600" cy="376" r="74" fill="#f8fafc" stroke="#94a3b8" stroke-width="3"/>
+    <text x="600" y="369" text-anchor="middle" class="remoteText">触摸面</text>
+    <text x="600" y="397" text-anchor="middle" class="remoteSmall">滑动 = 鼠标移动</text>
+
+    <circle cx="515" cy="605" r="48" fill="#0f172a"/>
+    <text x="515" y="612" text-anchor="middle" class="label">‹</text>
+    <text x="515" y="676" text-anchor="middle" class="remoteSmall">返回</text>
+
+    <circle cx="685" cy="605" r="48" fill="#0f172a"/>
+    <text x="685" y="612" text-anchor="middle" class="label">⌂</text>
+    <text x="685" y="676" text-anchor="middle" class="remoteSmall">Home</text>
+
+    <circle cx="515" cy="780" r="48" fill="#111827"/>
+    <text x="515" y="787" text-anchor="middle" class="label">▶</text>
+    <text x="515" y="850" text-anchor="middle" class="remoteSmall">播放</text>
+
+    <circle cx="685" cy="780" r="48" fill="#111827"/>
+    <text x="685" y="787" text-anchor="middle" class="label">⌫</text>
+    <text x="685" y="850" text-anchor="middle" class="remoteSmall">静音</text>
+
+    <rect x="505" y="930" width="190" height="64" rx="32" fill="#111827"/>
+    <text x="600" y="970" text-anchor="middle" class="label">麦克风 / Fn</text>
+
+    <rect x="505" y="1075" width="190" height="118" rx="42" fill="#111827"/>
+    <text x="600" y="1124" text-anchor="middle" class="label">音量 +</text>
+    <line x1="535" y1="1138" x2="665" y2="1138" stroke="#334155" stroke-width="2"/>
+    <text x="600" y="1174" text-anchor="middle" class="label">音量 -</text>
+
+    <text x="600" y="1328" text-anchor="middle" class="remoteSmall">方向实体键</text>
+    <text x="600" y="1358" text-anchor="middle" class="remoteSmall">↑ ↓ ← → = 键盘方向键</text>
+  </g>
+
+  <g>
+    <rect x="70" y="255" width="300" height="160" rx="26" class="card"/>
+    <circle cx="102" cy="292" r="8" class="accent"/>
+    <text x="125" y="300" class="section">触摸面</text>
+    <text x="95" y="342" class="small">滑动：移动鼠标指针</text>
+    <text x="95" y="375" class="small">双击确认：开 / 关滑动</text>
+    <path d="M370 335 C405 335 430 350 456 370" class="line"/>
+  </g>
+
+  <g>
+    <rect x="820" y="240" width="310" height="178" rx="26" class="card"/>
+    <circle cx="852" cy="278" r="8" class="green"/>
+    <text x="875" y="286" class="section">确认键</text>
+    <text x="845" y="330" class="small">单击：Enter</text>
+    <text x="845" y="363" class="small">双击：开启/关闭触摸滑动</text>
+    <path d="M820 350 C780 350 745 365 675 375" class="line"/>
+  </g>
+
+  <g>
+    <rect x="70" y="555" width="300" height="170" rx="26" class="card"/>
+    <circle cx="102" cy="592" r="8" class="amber"/>
+    <text x="125" y="600" class="section">返回键</text>
+    <text x="95" y="644" class="small">单击：鼠标左键 + Enter</text>
+    <text x="95" y="677" class="small">双击：Control + ←</text>
+    <path d="M370 630 C405 625 435 615 467 605" class="line"/>
+  </g>
+
+  <g>
+    <rect x="820" y="555" width="310" height="170" rx="26" class="card"/>
+    <circle cx="852" cy="592" r="8" class="amber"/>
+    <text x="875" y="600" class="section">Home 键</text>
+    <text x="845" y="644" class="small">单击：鼠标右键</text>
+    <text x="845" y="677" class="small">双击：Control + →</text>
+    <path d="M820 630 C780 625 740 615 733 605" class="line"/>
+  </g>
+
+  <g>
+    <rect x="820" y="760" width="310" height="178" rx="26" class="card"/>
+    <circle cx="852" cy="798" r="8" class="pink"/>
+    <text x="875" y="806" class="section">静音键</text>
+    <text x="845" y="850" class="small">单击：删除</text>
+    <text x="845" y="883" class="small">长按：全选 + 删除</text>
+    <text x="845" y="916" class="small">可配置为双击开关</text>
+    <path d="M820 850 C780 835 745 810 733 785" class="line"/>
+  </g>
+
+  <g>
+    <rect x="70" y="760" width="300" height="160" rx="26" class="card"/>
+    <circle cx="102" cy="797" r="8" class="green"/>
+    <text x="125" y="805" class="section">播放/暂停</text>
+    <text x="95" y="850" class="small">单击：Space</text>
+    <text x="95" y="883" class="small">可配置为双击开关</text>
+    <path d="M370 840 C405 820 448 795 467 782" class="line"/>
+  </g>
+
+  <g>
+    <rect x="820" y="990" width="310" height="150" rx="26" class="card"/>
+    <circle cx="852" cy="1027" r="8" class="accent"/>
+    <text x="875" y="1035" class="section">麦克风键</text>
+    <text x="845" y="1080" class="small">单击：Fn / Globe</text>
+    <text x="845" y="1113" class="small">可配置为双击开关</text>
+    <path d="M820 1065 C780 1040 710 985 695 960" class="line"/>
+  </g>
+
+  <g>
+    <rect x="70" y="1075" width="300" height="160" rx="26" class="card"/>
+    <circle cx="102" cy="1112" r="8" class="accent"/>
+    <text x="125" y="1120" class="section">音量键</text>
+    <text x="95" y="1165" class="small">音量 +：向上滚动</text>
+    <text x="95" y="1198" class="small">音量 -：向下滚动</text>
+    <path d="M370 1160 C435 1140 475 1135 505 1134" class="line"/>
+  </g>
+
+  <g>
+    <rect x="820" y="1245" width="310" height="165" rx="26" class="card"/>
+    <circle cx="852" cy="1282" r="8" class="green"/>
+    <text x="875" y="1290" class="section">方向实体键</text>
+    <text x="845" y="1335" class="small">上/下/左/右</text>
+    <text x="845" y="1368" class="small">映射为键盘方向键</text>
+    <path d="M820 1325 C770 1328 725 1338 690 1345" class="line"/>
+  </g>
+
+  <g>
+    <rect x="70" y="1425" width="1060" height="155" rx="30" fill="rgba(56,189,248,0.10)" stroke="#38bdf8" stroke-width="2"/>
+    <text x="105" y="1475" class="section">如何调整映射</text>
+    <text x="105" y="1518" class="small">开关滑动按键：编辑 remote-settings.json 的 touchMouseToggleButton，然后运行 configure-touch-toggle.mjs。</text>
+    <text x="105" y="1554" class="small">基础按键动作：改 tools/configure-touch-toggle.mjs 里的 buttonCatalog / createBaseManipulators，再跑 self-test。</text>
+  </g>
+
+  <text x="80" y="1640" class="tiny">Generated for siri-remote-karabiner-setup skill. Current default: double click Confirm toggles touch mouse.</text>
+</svg>

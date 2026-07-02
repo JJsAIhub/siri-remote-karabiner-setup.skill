@@ -1,0 +1,3 @@
+display_name: Siri Remote Karabiner Setup
+short_description: Install Karabiner, map an Apple TV Siri Remote, and import reusable JSON profiles on macOS.
+default_prompt: Help me set up an Apple TV Siri Remote on macOS with Karabiner-Elements from zero, including install, event checking, JSON import, and on/off profile switching.

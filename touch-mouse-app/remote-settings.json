@@ -1,0 +1,5 @@
+{
+  "touchMouseToggleButton": "selection",
+  "doubleClickDelayMilliseconds": 300,
+  "longPressDelayMilliseconds": 500
+}
