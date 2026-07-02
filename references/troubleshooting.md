@@ -66,6 +66,29 @@ Recover by restoring the backup `karabiner.json`.
 
 If the bundled installer script was used, it creates a timestamped backup automatically.
 
+Default backup location:
+
+- `~/.config/karabiner/automatic_backups/`
+
+Restore flow:
+
+```bash
+cp ~/.config/karabiner/automatic_backups/<backup-file>.json ~/.config/karabiner/karabiner.json
+```
+
+Then reopen Karabiner-Elements.
+
+## Uninstall Touch Mouse App
+
+Stop and remove the helper app:
+
+```bash
+pkill -f SiriRemoteHIDProbe
+rm -rf /Applications/SiriRemoteHIDProbe.app
+```
+
+Then restore the Karabiner backup if the user wants to remove the mappings too.
+
 ## Profile Switching Does Not Update Immediately
 
 Try:

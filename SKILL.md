@@ -77,6 +77,7 @@ Use the script when the user wants the fastest local setup with the fewest manua
 
 - The remote's touch swipe area may not appear as ordinary Karabiner button events. Use the helper app plus Karabiner toggle file flow when touch movement is required.
 - Keep physical button mappings in Karabiner and touch-surface mouse movement in the helper app. This separation prevents normal mouse/trackpad conflicts from becoming impossible to debug.
+- Before running install commands for a user, explain that the installer edits `~/.config/karabiner/karabiner.json`, installs `/Applications/SiriRemoteHIDProbe.app`, and requires macOS Accessibility/Input Monitoring approvals.
 - When changing mappings, edit the small config/generator first. Avoid hand-editing the large installed `karabiner.json` unless debugging.
 - A truly zero-click setup is not realistic on macOS because first-run system permissions still require user approval.
 - Homebrew auto-install should be framed as "try automatically first, then fall back to manual install if it fails" rather than as a guaranteed one-click path.
