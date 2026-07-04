@@ -9,12 +9,22 @@
 
 ## 适用范围
 
-- 系统：macOS。
+- 系统：macOS 13 Ventura 及以上更推荐；当前已在 macOS 26.5.1 上验证。
 - 设备：Apple TV Siri Remote，当前映射以银色款 Siri Remote 为主。
-- 依赖：Karabiner-Elements、Node.js、系统自带编译工具链。
+- 依赖：Karabiner-Elements、Node.js 18+、系统自带编译工具链。
 - 权限：安装后需要用户手动允许辅助功能、输入监控等 macOS 权限。
 
 这个仓库会修改本机 Karabiner 配置，并安装一个本地 App 到 `/Applications/SiriRemoteHIDProbe.app`。首次使用前建议先运行 `--dry-run` 预演。
+
+## 兼容性和已知风险
+
+- Karabiner-Elements 官方当前支持 macOS 13 Ventura 到 macOS 27 Golden Gate，并支持 Intel Mac 和 Apple Silicon Mac。
+- 实体按键映射主要依赖 Karabiner，跨 macOS 版本的兼容性最好。
+- 触摸滑动 App 使用 macOS 私有 `MultitouchSupport` 接口。它能实现遥控器触摸面模拟鼠标，但 macOS 大版本升级后可能需要重新验证。
+- 不建议把当前机器编译出来的 `.app` 直接发给别人用。当前本机编译产物是 Apple Silicon 的 `arm64`，最低系统版本会跟随本机 SDK；其他 Mac 应优先在本机运行安装脚本重新编译。
+- 当前遥控器识别条件写死为 Apple `vendor_id: 76`、`product_id: 789`。如果换了另一代 Apple TV Remote，可能需要先用 Karabiner-EventViewer 或 `karabiner_cli --list-connected-devices` 确认设备 ID。
+- 安装脚本会备份但也会改写 `~/.config/karabiner/karabiner.json`。如果用户已有复杂 Karabiner 配置，安装前一定先保存备份。
+- macOS 权限不能被脚本绕过。首次运行仍需要用户手动允许辅助功能、输入监控、Karabiner 系统扩展等权限。
 
 ## 映射图
 

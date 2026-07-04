@@ -83,3 +83,12 @@ Use the script when the user wants the fastest local setup with the fewest manua
 - Homebrew auto-install should be framed as "try automatically first, then fall back to manual install if it fails" rather than as a guaranteed one-click path.
 - `Karabiner-EventViewer` can temporarily disable active modifications while monitoring. If mappings appear not to work, check that first.
 - The Back button on this remote was confirmed as `generic_desktop: system_app_menu`, not `menu_escape`.
+
+## Compatibility Notes
+
+- Treat the Karabiner button mappings and the touch mouse helper as two different compatibility surfaces.
+- Karabiner v16 supports modern macOS versions and both Intel and Apple Silicon Macs, but the helper app still depends on private macOS `MultitouchSupport` APIs.
+- Do not promise that a prebuilt `SiriRemoteHIDProbe.app` works on every Mac. Prefer local compile through `node touch-mouse-app/tools/install-touch-mouse-app.mjs`.
+- The currently verified remote identifier is Apple `vendor_id: 76`, `product_id: 789`. If another Siri Remote generation does not respond, verify the device ID before changing mappings.
+- If the active Karabiner profile is `Siri Remote Off`, mappings are intentionally disabled. Check the current profile before debugging code.
+- Node.js 18+ is the safest baseline because the generator uses modern JavaScript APIs.

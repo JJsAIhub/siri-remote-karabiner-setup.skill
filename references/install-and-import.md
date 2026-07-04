@@ -48,6 +48,14 @@ Common permissions to confirm:
 - `Input Monitoring`
 - system extension / driver prompts if macOS asks
 
+Compatibility notes:
+
+- Karabiner-Elements is the stable layer for physical button mappings.
+- The touch-surface helper app is more sensitive to macOS changes because it uses the private `MultitouchSupport` framework.
+- Prefer compiling the helper app on the user's own Mac instead of distributing a prebuilt `.app`.
+- If the user is on Intel Mac, do not reuse an Apple Silicon-only build.
+- If the user is on an older macOS version, verify build output and app launch before assuming touch movement works.
+
 If the goal is the fewest possible steps, prefer the bundled script first. It will:
 
 - check whether Karabiner is installed in common app locations
@@ -77,6 +85,7 @@ If no events appear:
 - verify Bluetooth pairing first
 - check whether the remote is still connected
 - check Karabiner permissions again
+- confirm the remote device ID; this setup currently targets Apple `vendor_id: 76`, `product_id: 789`
 
 ## Step 3: Choose Setup Path
 
@@ -126,8 +135,11 @@ With `Siri Remote On` selected, test:
 - Up button moves up
 - Down button moves down
 - Center confirm acts like `Enter`
-- Back acts like `Esc`
-- Home acts like `Tab`
+- Back single click acts like mouse left click + `Enter`
+- Back double click acts like `Control + Left Arrow`
+- Home single click acts like mouse right click
+- Home double click acts like `Control + Right Arrow`
+- double click the configured toggle button enables or disables touch-surface mouse movement
 
 Then switch to `Siri Remote Off` and confirm the custom behavior stops.
 
