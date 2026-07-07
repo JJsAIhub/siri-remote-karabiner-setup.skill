@@ -41,6 +41,12 @@
 - 音量键映射为上下滚动。
 - 侧边麦克风键映射为 `Fn`。
 
+## 遥控器切换
+
+如果需要在 Apple TV 和 Mac 之间切换遥控器连接，看：
+
+- [新款 Apple TV 遥控器切换教程](references/remote-switching.md)
+
 ## 一键安装
 
 在仓库根目录运行：

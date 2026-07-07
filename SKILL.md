@@ -39,6 +39,7 @@ Use it when the job includes:
 - For confirmed event names and final button mapping, read [references/event-map.md](references/event-map.md).
 - For JSON structure and field meanings, read [references/json-explained.md](references/json-explained.md).
 - For touch-surface mouse movement, configurable toggle buttons, and helper-app verification, read [references/touch-mouse-config.md](references/touch-mouse-config.md).
+- For switching the new Siri Remote between Apple TV and Mac Bluetooth pairing, read [references/remote-switching.md](references/remote-switching.md).
 - For common failures and recovery steps, read [references/troubleshooting.md](references/troubleshooting.md).
 
 ## Bundled Assets
