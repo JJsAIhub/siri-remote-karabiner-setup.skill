@@ -206,7 +206,12 @@ function createBaseManipulators(settings) {
     }),
     createSinglePressManipulator('mute', settings),
     createSinglePressManipulator('play_pause', settings),
-    createSinglePressManipulator('microphone', settings)
+    ...createDoubleClickManipulators({
+      buttonName: 'microphone',
+      variableName: 'siri_remote_microphone_pending',
+      doubleAction: [{ key_code: 'escape' }],
+      settings
+    })
   ];
 }
 
@@ -352,7 +357,7 @@ function runSelfTest() {
   });
   const manipulators = getPrimaryManipulators(nextConfig);
 
-  assert.equal(manipulators.length, 9);
+  assert.equal(manipulators.length, 10);
   assert.deepEqual(manipulators[0].from, { consumer_key_code: 'mute' });
   assert.equal(manipulators[0].to[1].shell_command, `/usr/bin/touch ${toggleSignalPath}`);
   assert.equal(manipulators[1].parameters['basic.to_delayed_action_delay_milliseconds'], 280);
@@ -367,6 +372,13 @@ function runSelfTest() {
     true
   );
   assert.equal(manipulators.some((manipulator) => hasVariableCondition(manipulator, 'siri_remote_selection_pending')), false);
+  assert.equal(
+    manipulators.some((manipulator) =>
+      sameFrom(manipulator.from, buttonCatalog.microphone.from) &&
+      (manipulator.to ?? []).some((item) => item.key_code === 'escape')
+    ),
+    true
+  );
   assert.throws(() => normalizeSettings({ touchMouseToggleButton: 'unknown' }), /未知按键/);
 
   console.log('[self-test] passed');

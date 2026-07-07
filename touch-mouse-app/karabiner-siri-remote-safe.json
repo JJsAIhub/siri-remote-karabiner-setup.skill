@@ -353,17 +353,83 @@
                                             }
                                         ],
                                         "type": "device_if"
+                                    },
+                                    {
+                                        "name": "siri_remote_microphone_pending",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
                                 "from": {
                                     "consumer_key_code": "microphone"
                                 },
-                                "type": "basic",
                                 "to": [
                                     {
-                                        "apple_vendor_top_case_key_code": "keyboard_fn"
+                                        "set_variable": {
+                                            "name": "siri_remote_microphone_pending",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "key_code": "escape"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "is_consumer": true,
+                                                "product_id": 789,
+                                                "vendor_id": 76
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    },
+                                    {
+                                        "name": "siri_remote_microphone_pending",
+                                        "type": "variable_unless",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "consumer_key_code": "microphone"
+                                },
+                                "parameters": {
+                                    "basic.to_delayed_action_delay_milliseconds": 300
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "siri_remote_microphone_pending",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_delayed_action": {
+                                    "to_if_canceled": [
+                                        {
+                                            "set_variable": {
+                                                "name": "siri_remote_microphone_pending",
+                                                "value": 0
+                                            }
+                                        }
+                                    ],
+                                    "to_if_invoked": [
+                                        {
+                                            "set_variable": {
+                                                "name": "siri_remote_microphone_pending",
+                                                "value": 0
+                                            }
+                                        },
+                                        {
+                                            "apple_vendor_top_case_key_code": "keyboard_fn"
+                                        }
+                                    ]
+                                },
+                                "type": "basic"
                             },
                             {
                                 "conditions": [

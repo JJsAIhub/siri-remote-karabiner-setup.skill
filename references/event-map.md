@@ -41,7 +41,8 @@ The following event names were confirmed from `Karabiner-EventViewer` for this S
 - single click `data_on_screen` -> mouse right click
 - double click `data_on_screen` -> `control + right_arrow`
 - `play_or_pause` -> `spacebar`
-- `microphone` -> `Fn`
+- single click `microphone` -> `Fn`
+- double click `microphone` -> `escape`
 - single click `mute` -> `delete_or_backspace`
 - long press `mute` -> `command + a`, then `delete_or_backspace`
 - `volume_increment` -> scroll up
