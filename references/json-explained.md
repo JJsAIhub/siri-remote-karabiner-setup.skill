@@ -78,21 +78,29 @@ instead of `consumer_key_code`.
 
 That is why it looks different from the other buttons.
 
+### Play/Pause
+
+The Play/Pause button maps single click to:
+
+```json
+{ "key_code": "spacebar" }
+```
+
+Double click maps to:
+
+```json
+{ "key_code": "escape" }
+```
+
 ### Fn
 
-The microphone side button maps single click to:
+The microphone side button maps to:
 
 ```json
 { "apple_vendor_top_case_key_code": "keyboard_fn" }
 ```
 
 This is Karabiner's way of expressing the Mac `Fn` key.
-
-Double click maps the same button to:
-
-```json
-{ "key_code": "escape" }
-```
 
 ### Scroll
 
